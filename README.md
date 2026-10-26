@@ -574,7 +574,20 @@ www. mrcet.... com
 #Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
-
+```
+bench.py
+file1
+file11
+file2
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
+```
 
 mkdir backupdir
  
@@ -584,7 +597,22 @@ cd backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
-
+```
+drwxr-xr-x root/root         0 2024-08-16 10:12:02 backupdir/
+-rw-r--r-- root/root     13312 2024-08-16 10:10:04 backupdir/backup.tar
+-rw-r--r-- root/root       114 2020-07-05 23:17:07 bench.py
+-rw-r--r-- root/root        61 2024-08-16 09:48:52 file1
+-rw-r--r-- root/root        29 2024-08-16 09:52:03 file11
+-rw-r--r-- root/root        70 2024-08-16 09:49:11 file2
+-rw-r--r-- root/root       131 2024-08-16 10:06:47 file21
+-rw-r--r-- root/root       155 2024-08-16 10:07:30 file22
+-rw-r--r-- root/root       210 2024-08-16 10:02:59 file23
+-rw-r--r-- root/root        76 2020-07-03 14:45:56 hello.c
+-rw-r--r-- root/root        22 2020-06-26 14:57:33 hello.js
+-rw-r--r-- root/root        96 2024-08-16 09:57:21 newfile
+-rw-r--r-- root/root       151 2020-07-05 23:19:13 readme.txt
+-rw-r--r-- root/root        52 2024-08-16 10:09:28 urllist.txt
+```
 
 tar -xvf backup.tar
 ## OUTPUT
@@ -593,10 +621,27 @@ gzip backup.tar
 
 ls .gz
 ## OUTPUT
+```
+backupdir/
+backupdir/backup.tar
+bench.py
+file1
+file11
+file2
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
+```
  
 gunzip backup.tar.gz
 ## OUTPUT
-
+```
+```
  
 # Shell Script
 ```
@@ -606,7 +651,10 @@ echo 'echo Hello World‘; exit 0 >> my-script.sh
 chmod 755 my-script.sh
 ./my-script.sh
 ## OUTPUT
-
+```
+echo '#!/bin/sh' > my-script.sh
+echo 'echo Hello World‘; exit 0 >> my-script.sh
+```
  
 cat << stop > herecheck.txt
 ```
@@ -618,7 +666,20 @@ stop
 
 cat herecheck.txt
 ## OUTPUT
-
+```
+\#!/bin/sh
+echo “File name is $0 ”
+echo "File name is " `basename $0`
+echo “First arg. is ” $1
+echo “Second arg. is ” $2
+echo “Third arg. is ” $3
+echo “Fourth arg. is ” $4
+echo 'The $@ is ' $@
+echo 'The $\# is ' $1#
+echo 'The $$ is ' $$
+ps
+^d
+```
 
 cat < scriptest.sh 
 ```bash
